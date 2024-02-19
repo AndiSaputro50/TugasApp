@@ -1,0 +1,60 @@
+{
+  "siswa": [
+    {
+      "id": "a473",
+      "nama": "Andi Saputro",
+      "kelas": "X TKJ",
+      "nik": "0897765120723",
+      "alamat": "Kudus",
+      "gender": "Laki-Laki"
+    },
+    {
+      "id": "17e4",
+      "nama": "Secondta",
+      "kelas": "XII TKJ",
+      "nik": "0896235467734",
+      "alamat": "Semarang",
+      "gender": "Laki-Laki"
+    },
+    {
+      "id": "ad0b",
+      "nama": "Dinda",
+      "kelas": "XI TKJ",
+      "nik": "0811782692658",
+      "alamat": "Kebumen",
+      "gender": "Perempuan"
+    },
+    {
+      "id": "62cc",
+      "nama": "Nizar",
+      "kelas": "XI TKJ",
+      "nik": "09816892537",
+      "alamat": "Pemalang",
+      "gender": "Laki-Laki"
+    },
+    {
+      "id": "de98",
+      "nama": "Rahma",
+      "kelas": "X TKJ",
+      "nik": "010827482582",
+      "alamat": "Tidak Di Ketahui",
+      "gender": "Perempuan"
+    },
+    {
+      "id": "b44a",
+      "nama": "Alfa",
+      "kelas": "X TKJ",
+      "nik": "02170370193",
+      "alamat": "Purbalingga",
+      "gender": "Laki-Laki"
+    },
+    {
+      "id": "79aa",
+      "nama": "Mely",
+      "kelas": "XII TKJ",
+      "nik": "01129238923",
+      "alamat": "Semarang",
+      "gender": "Perempuan"
+    }
+  ]
+}
