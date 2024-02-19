@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Table, Card, Pagination } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit, faTrashAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faTrashAlt, faPlus, faChevronLeft,faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 function Siswa() {
     const [posts, setPosts] = useState([]);
@@ -120,24 +120,32 @@ function Siswa() {
                                             <td>{row.kelas}</td>
                                             <td>{row.gender}</td>
                                             <td>
-                                                <Button href={`/edit/${row.id}`} variant="warning" style={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.10)', borderBottom: '2px solid #000' }}>
+                                                <Button href={`/edit/${row.id}`} variant="warning" className="me-2">
                                                     <FontAwesomeIcon icon={faEdit} />
-                                                </Button>{' '}
-                                                <Button variant="danger" onClick={() => handleDelete(row.id)} style={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.10)', borderBottom: '2px solid #000' }}>
+                                                </Button>
+                                                <Button variant="danger" onClick={() => handleDelete(row.id)}>
                                                     <FontAwesomeIcon icon={faTrashAlt} />
-                                                </Button>{' '}
+                                                </Button>
                                             </td>
                                         </tr>
                                     ))}
                                 </tbody>
                             </Table>
+                            <div className="d-flex justify-content-center mt-3">
                             <Pagination className="justify-content-center">
-                                {[...Array(Math.ceil(records.length / postsPerPage)).keys()].map(number => (
-                                    <Pagination.Item key={number} onClick={() => paginate(number + 1)} active={number + 1 === currentPage}>
-                                        {number + 1}
-                                    </Pagination.Item>
-                                ))}
-                            </Pagination>
+                <Pagination.Prev onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>
+                    <FontAwesomeIcon icon={faChevronLeft} /> {/* Panah ke kiri */}
+                </Pagination.Prev>
+                {[...Array(Math.ceil(posts.length / postsPerPage)).keys()].map(number => (
+                    <Pagination.Item key={number} onClick={() => paginate(number + 1)} active={number + 1 === currentPage}>
+                        {number + 1}
+                    </Pagination.Item>
+                ))}
+                <Pagination.Next onClick={() => paginate(currentPage + 1)} disabled={currentPage === Math.ceil(posts.length / postsPerPage)}>
+                    <FontAwesomeIcon icon={faChevronRight} /> {/* Panah ke kanan */}
+                </Pagination.Next>
+            </Pagination>
+                            </div>
                         </>
                     )}
                 </Card.Body>

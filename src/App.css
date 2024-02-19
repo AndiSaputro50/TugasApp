@@ -135,9 +135,11 @@ a:hover {
   .mt-md-5 {
     margin-top: 3rem !important;
   }
+
   .text-center {
     text-align: center !important;
   }
+
   .mb-md-3 {
     margin-bottom: 1rem !important;
   }
@@ -147,8 +149,13 @@ a:hover {
   .mb-3 {
     margin-bottom: 1rem !important;
   }
+
   .mt-5 {
     margin-top: 3rem !important;
   }
 }
+
 /* style dashboard */
+
+/* style visi dan misi */
+
