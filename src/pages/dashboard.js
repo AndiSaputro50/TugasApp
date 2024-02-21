@@ -80,13 +80,13 @@ function Dashboard() {
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
-        <div className="container mt-3">
-            <h1 className='text-center'>Dashboard</h1>
+        <div className="container mt-5">
+            <h1 className='text-center' style={{fontFamily: 'Poopins'}}>Dashboard</h1>
             <Row>
                 <Col md={12}>
                     <Card style={{ boxShadow: "0 0 5px rgba(0, 0, 0, 0.10)", marginBottom: "20px" }}>
                         <Card.Body>
-                            <h2 className="text-center">Jumlah Siswa berdasarkan Gender</h2>
+                            <h2 className="text-center" style={{fontFamily: 'Poopins'}}>Jumlah Siswa berdasarkan Gender</h2>
                             <Chart options={genderChartOptions} series={genderChartSeries} type="bar" height={350} />
                         </Card.Body>
                     </Card>
@@ -98,12 +98,12 @@ function Dashboard() {
             <Table striped bordered hover responsive>
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th>Nama</th>
-                        <th>NIK</th>
-                        <th>Alamat</th>
-                        <th>Kelas</th>
-                        <th>Gender</th>
+                        <th style={{fontFamily: 'sans-serif'}}>No</th>
+                        <th style={{fontFamily: 'sans-serif'}}>Nama</th>
+                        <th style={{fontFamily: 'sans-serif'}}>NIK</th>
+                        <th style={{fontFamily: 'sans-serif'}}>Alamat</th>
+                        <th style={{fontFamily: 'sans-serif'}}>Kelas</th>
+                        <th style={{fontFamily: 'sans-serif'}}>Gender</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -46,7 +46,7 @@ function Siswa() {
                     await fetch(`http://localhost:3030/siswa/${id}`, requestOptions);
                     const updatedRecords = records.filter(record => record.id !== id);
                     setRecords(updatedRecords);
-                    setSearchResult(updatedRecords.length > 0); // Perbarui status hasil pencarian
+                    setSearchResult(updatedRecords.length > 0);
                     Swal.fire({
                         icon: 'success',
                         title: 'Berhasil',
@@ -83,7 +83,7 @@ function Siswa() {
 
     return (
         <div className="container mt-5">
-            <h1 className='text-center'>Siswa</h1>
+            <h1 className='text-center' style={{fontFamily: 'Poopins'}}>Data Siswa</h1>
             <div className="text-end mb-3">
                 <div className="d-flex justify-content-between align-items-center mb-2">
                     <Button href={`/tambah`} className="btn btn-primary" style={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
@@ -101,13 +101,13 @@ function Siswa() {
                             <Table striped bordered hover responsive>
                                 <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Nama</th>
-                                        <th>NIK</th>
-                                        <th>Alamat</th>
-                                        <th>Kelas</th>
-                                        <th>Gender</th>
-                                        <th>Aksi</th>
+                                        <th style={{fontFamily: 'sans-serif'}}>No</th>
+                                        <th style={{fontFamily: 'sans-serif'}}>Nama</th>
+                                        <th style={{fontFamily: 'sans-serif'}}>NIK</th>
+                                        <th style={{fontFamily: 'sans-serif'}}>Alamat</th>
+                                        <th style={{fontFamily: 'sans-serif'}}>Kelas</th>
+                                        <th style={{fontFamily: 'sans-serif'}}>Gender</th>
+                                        <th style={{fontFamily: 'sans-serif'}}>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>

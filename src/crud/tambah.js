@@ -52,7 +52,7 @@ function Tambah() {
         try {
             await axios.post("http://localhost:3030/siswa", student);
             console.log("Berhasil menambah data");
-            // Tampilkan SweetAlert "Student added successfully"
+            // Tampilkan SweetAlert "Berhasil"
             Swal.fire({
                 icon: 'success',
                 title: 'Sukses',
@@ -64,7 +64,7 @@ function Tambah() {
                 window.location.href = "/siswa";
             });
         } catch (error) {
-            console.error("Kesalahan saat mengisi data:", error);
+            console.error("Kesalahan saat mengisi data", error);
             // Handle error here if needed
         }
     };
@@ -82,10 +82,10 @@ function Tambah() {
 
     return (
         <div className="container mt-5">
-            <h2>Tambah Data Siswa</h2>
+            <h2 style={{ fontFamily: 'Poopins' }}>Tambah Data Siswa</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label>Nama:</label>
+                    <label style={{ fontWeight: 'bold' }}>Nama:</label>
                     <input
                         type="text"
                         className="form-control"
@@ -95,7 +95,7 @@ function Tambah() {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Kelas:</label>
+                    <label style={{ fontWeight: 'bold' }}>Kelas:</label>
                     <select
                         className="form-control"
                         name="kelas"
@@ -118,7 +118,7 @@ function Tambah() {
                     </select>
                 </div>
                 <div className="form-group">
-                    <label>NIK:</label>
+                    <label style={{ fontWeight: 'bold' }}>NIK:</label>
                     <input
                         type="text"
                         className="form-control"
@@ -128,7 +128,7 @@ function Tambah() {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Alamat:</label>
+                    <label style={{ fontWeight: 'bold' }}>Alamat:</label>
                     <input
                         type="text"
                         className="form-control"
@@ -138,7 +138,7 @@ function Tambah() {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Gender:</label>
+                    <label style={{ fontWeight: 'bold' }}>Gender:</label>
                     <select
                         className="form-control"
                         name="gender"
@@ -150,9 +150,11 @@ function Tambah() {
                         <option value="Perempuan">Perempuan</option>
                     </select>
                 </div>
-                <button type="submit" className="btn btn-primary mt-3">
-                    Tambah
-                </button>
+                <div className="text-center mt-3">
+                    <button type="submit" className="btn btn-primary">
+                        Tambah
+                    </button>
+                </div>
             </form>
         </div>
     );

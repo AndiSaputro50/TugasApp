@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Image, NavDropdown } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 import logobinus from "../asset/logobinus.png";
 
 function NavbarComp() {
@@ -12,37 +12,39 @@ function NavbarComp() {
         <div className="navbar mt-5">
             <Navbar
                 expand="lg"
-                className="shadow-sm border-bottom border-dark fixed-top"
-                style={{ backgroundColor: "#003C30", color: "#FFFFFF" }}
+                className="shadow-sm border-bottom border-light fixed-top"
+                style={{ backgroundColor: 'HighlightText' }}
                 expanded={isExpanded}
                 onToggle={() => setIsExpanded(!isExpanded)}
             >
                 <Container>
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand>
                         <div className="d-flex align-items-center">
                             <Image
                                 src={logobinus}
                                 alt="Logo"
                                 style={{ width: "50px", marginRight: "10px" }}
                             />
-                            <span style={{ fontSize: "1rem", fontWeight: "bold", color: "#C19556" }}>
+                            <span style={{ fontSize: "1rem", fontWeight: "bold", color: "#ffdd00" }}>
                                 SMK Bina Nusantara
                             </span>
                         </div>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav" className="styler">
+                    <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Link href="/" className="text-light">
+                            <Nav.Link href="/" className="text-dark" style={{ fontFamily: 'Poopins' }}>
                                 Dashboard
                             </Nav.Link>
-                            <Nav.Link href="/siswa" className="text-light">
+                            <Nav.Link href="/siswa" className="text-dark" style={{ fontFamily: 'Poopins' }}>
                                 Siswa
                             </Nav.Link>
-                            <NavDropdown title="Profile" id="basic-nav-dropdown" style={{ color: "#FFFFFF" }}>
-                                <NavDropdown.Item href="/tentang" className="text-dark ">Tentang</NavDropdown.Item>
-                                <NavDropdown.Item href="/visi-misi" className="text-dark ">Visi Misi</NavDropdown.Item>
-                            </NavDropdown>
+                            <Nav.Link href="/tentang" className="text-dark" style={{ fontFamily: 'Poopins' }}>
+                                Tentang
+                            </Nav.Link>
+                            <Nav.Link href="/visi-misi" className="text-dark" style={{ fontFamily: 'Poopins' }}>
+                                Visi-Misi
+                            </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

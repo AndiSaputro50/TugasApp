@@ -4,17 +4,11 @@
   }
 }
 
-/* .navbar-brand img {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-} */
-
 /* STYLE UNTUK REPSONSIVE SIDEBAR */
 @media (max-width: 768px) {
   .navbar-nav .nav-link {
-    color: #4a4848 !important;
-    background-color: #C19556;
+    color: #000 !important;
+    background-color: rgb(241, 238, 238);
     border-radius: 6px;
     margin: 5px;
     padding: 10px 15px;
@@ -28,7 +22,6 @@
     /* 4 nilai yang diberikan: offset-x, offset-y, blur-radius, dan color */
   }
 }
-
 /* STYLE UNTUK REPSONSIVE SIDEBAR */
 
 
@@ -111,13 +104,13 @@ a:hover {
 }
 
 .pagination .page-item .page-link:hover {
-  background-color: #003C30;
+  background-color: gray;
   color: #fff;
 }
 
 .pagination .page-item.active .page-link {
-  background-color: #003C30;
-  border-color: #003C30;
+  background-color: gray;
+  border-color: gray;
   color: #fff;
 }
 

@@ -26,15 +26,6 @@ const itemVariants = {
     }
 };
 
-const logoVariants = {
-    hover: {
-        scale: 1.1,
-        transition: {
-            duration: 0.2,
-            yoyo: Infinity // Untuk membuat animasi berulang saat hover
-        }
-    }
-};
 
 const styles = {
     container: {
@@ -98,26 +89,35 @@ const styles = {
 function VisiMisi() {
     return (
         <motion.div style={styles.container} variants={containerVariants} initial="hidden" animate="visible">
+            <h1 className='text-center mt-5' style={{ fontFamily: 'Poopins' }}>Visi-Misi</h1>
             <div style={styles.logoContainer}>
                 <motion.img
-                    className='mt-5'
                     src={logobinus}
                     alt="SMK Bina Nusantara Semarang"
-                    style={styles.logo}
-                    variants={logoVariants}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                    style={{
+                        width: '100%',
+                        marginBottom: '20px',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        maxWidth: '200px',
+                        marginLeft: '25px',
+                    }}
                     whileHover="hover"
                 />
             </div>
             <div style={styles.content}>
                 <div style={styles.visiMisi}>
                     <motion.div style={styles.visi} variants={itemVariants}>
-                        <h2>Visi</h2>
+                        <h2 style={{ fontFamily: 'Poopins' }}>Visi</h2>
                         <motion.p style={styles.visiText} >
                             “Menyiapkan Tenaga Terampil Menengah yang Siap Berkompetisi dan Siap Kerja”
                         </motion.p>
                     </motion.div>
                     <motion.div style={styles.misi} variants={itemVariants}>
-                        <h2>Misi</h2>
+                        <h2 style={{ fontFamily: 'Poopins' }}>Misi</h2>
                         <motion.div style={styles.misiText} >
                             <p>1. Menyiapkan lulusan yang siap mengisi pasaran kerja sesuai dengan bidang profesinya</p>
                             <p>2. Meningkatkan ketrampilan wirausaha</p>

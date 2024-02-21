@@ -15,17 +15,17 @@ function Edit() {
     const { id } = useParams();
 
     useEffect(() => {
-        getStudent();
-    }, []);
+        const getStudent = async () => {
+            try {
+                const response = await axios.get(`http://localhost:3030/siswa/${id}`);
+                setStudent(response.data);
+            } catch (error) {
+                console.error("Kesalahan saat mengubah data:", error);
+            }
+        };
 
-    const getStudent = async () => {
-        try {
-            const response = await axios.get(`http://localhost:3030/siswa/${id}`);
-            setStudent(response.data);
-        } catch (error) {
-            console.error("Error fetching student:", error);
-        }
-    };
+        getStudent();  // Panggil fungsi getStudent di dalam useEffect
+    }, [id]);  // Tambahkan id sebagai dependensi
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -50,7 +50,7 @@ function Edit() {
                 }
             });
         } else {
-            console.log("All fields are required");
+            console.log("Isi semua data terlebih dahulu");
         }
     };
 
@@ -60,7 +60,7 @@ function Edit() {
             Swal.fire({
                 icon: 'success',
                 title: 'Sukses',
-                text: 'Student updated successfully',
+                text: 'Berhasil mengubah data',
                 timer: 1500,
                 timerProgressBar: true,
                 showConfirmButton: false
@@ -68,7 +68,7 @@ function Edit() {
                 window.location.href = "/siswa";
             });
         } catch (error) {
-            console.error("Error updating student:", error);
+            console.error("Kesalahan saat mengisi data", error);
         }
     };
 
@@ -85,10 +85,10 @@ function Edit() {
 
     return (
         <div className="container mt-5">
-            <h2 className="text-center mb-4">Edit Data Siswa</h2>
+            <h2 className="text-center mb-4" style={{fontFamily: 'Poopins'}}>Edit Data Siswa</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label>Nama:</label>
+                    <label style={{fontWeight: 'bold'}}>Nama:</label>
                     <input
                         type="text"
                         className="form-control"
@@ -98,7 +98,7 @@ function Edit() {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Kelas:</label>
+                    <label style={{fontWeight: 'bold'}}>Kelas:</label>
                     <select
                         className="form-control"
                         name="kelas"
@@ -121,7 +121,7 @@ function Edit() {
                     </select>
                 </div>
                 <div className="form-group">
-                    <label>NIK:</label>
+                    <label style={{fontWeight: 'bold'}}>NIK:</label>
                     <input
                         type="text"
                         className="form-control"
@@ -131,7 +131,7 @@ function Edit() {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Alamat:</label>
+                    <label style={{fontWeight: 'bold'}}>Alamat:</label>
                     <input
                         type="text"
                         className="form-control"
@@ -141,7 +141,7 @@ function Edit() {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Gender:</label>
+                    <label style={{fontWeight: 'bold'}}>Gender:</label>
                     <select
                         className="form-control"
                         name="gender"
